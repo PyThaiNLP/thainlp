@@ -2,11 +2,11 @@
 
 from setuptools import find_packages, setup
 
-requirements = ['pythainlp']
+requirements = ['pythainlp>=2.0.1']
 
 setup(
     name="thainlp",
-    version="0.4.1",
+    version="0.4.2",
     description="Thai NLP library",
     long_description="Hello",
     long_description_content_type="text/markdown",
