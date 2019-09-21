@@ -8,7 +8,7 @@ requirements = ['pythainlp>=2.0.1']
 
 setup(
     name="thainlp",
-    version="0.4.2",
+    version="0.4.3",
     description="Thai NLP library",
     long_description=readme,
     long_description_content_type="text/markdown",
@@ -21,6 +21,7 @@ setup(
     license="Apache Software License 2.0",
     zip_safe=False,
     keywords="thainlp",
+    test_suite="tests",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Programming Language :: Python :: 3",

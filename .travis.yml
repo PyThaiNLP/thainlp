@@ -1,0 +1,20 @@
+language: python
+dist: bionic
+python:
+- '3.6'
+before_install:
+- sudo rm -f /etc/boto.cfg
+install:
+- pip install -q .
+os:
+- linux
+script: coverage run --source=thainlp setup.py test
+after_success: coveralls
+deploy:
+  provider: pypi
+  distributions: bdist_wheel
+  user: wannaphong
+  on:
+    tags: true
+  password:
+    secure: d3xQdslXiz6LBrcN32eVEz2yGmPLJNtj9k5mXBjWboSUSyQeH1Pp1Z/qJLYg5DvrfV8MphmtzfjWU67ztEWpywU4D3l8mEHuWjVLyOpuZcOznXB0ZB9mrWmHq5gvLA7h1rBDLa0JQT9qxSz2KdwQ6+pzJ8GaWb2U/I+esylgw6Y8bCL10WmSqHDDjlmak3VQAAh2h9zssj1Ok1lsdWc00y0qD5rFKhOEb2CQ0+k96eVaCjB00IRjkZxk0gRdGVw9ktRQ3NSu5/F6PJoZDlByAI5OytoJo8F8VmMETS2L5cR8lSoGK/z/EyRZDGmlfIAfnS+njtaQ5TpsCoM7JwCGyU4Gcw5S35vW70TIaL+akzt6Fjxh4vg2HyW3w7jiOg1UlrAEqwsGFRi7y46zHoXhZ7w03Cf9IIwlT8LALdLWtNNfwpnFd5Qre65SxmiveVRT2EbLyU8byJQ9hByit+bFXFECUJSNsOSLz90931zwuNry93b6tZkiuq3+2hIjwNSzsMxr3ADpjPV3HuDo2fYeM7O+Ot64wJaFPcFuSWEqKwTCT/TSS6sJM3CraK1+1HcXDeX3IpiH3S53T5SO1oHbGn9/E+A0QNxtIvPvh2K7cVelkOIkR09NggqgdM19U7jbPOD4PLyeZ+l5Poyzlpja8Ky91/21C0uskAdWb2A9kfs=
