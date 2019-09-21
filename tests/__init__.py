@@ -6,7 +6,7 @@ from thainlp import *
 
 
 class TestUM(unittest.TestCase):
-    def test_train(self):
+    def test_use(self):
         thai=nlp("ทดสอบระบบ")
         self.assertIsNotNone(thai.words)
         self.assertIsNotNone(thai.tags)
